@@ -2,8 +2,8 @@ class V1::RegistrationsController < Devise::SessionsController
     def create
       puts registration_params
       @user = User.new
-      @user.email = registration_params['email']
-      @user.password = registration_params['password']
+      @user.email = registration_params[:email]
+      @user.password = registration_params[:password]
 
       if @user.save
         render :user
@@ -16,4 +16,5 @@ class V1::RegistrationsController < Devise::SessionsController
     def registration_params
         params.permit!
     end
+
 end
