@@ -1,0 +1,2 @@
+class PrototypePhase < HackathonPhase
+end

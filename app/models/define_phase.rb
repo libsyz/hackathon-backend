@@ -1,0 +1,2 @@
+class DefinePhase < HackathonPhase
+end

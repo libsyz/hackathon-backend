@@ -1,0 +1,2 @@
+class IdeatePhase < HackathonPhase
+end
