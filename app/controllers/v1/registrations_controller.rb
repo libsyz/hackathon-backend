@@ -1,6 +1,5 @@
 class V1::RegistrationsController < Devise::SessionsController
     def create
-      
       @user = User.new
       @user.email = registration_params[:email]
       @user.password = registration_params[:password]
