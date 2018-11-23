@@ -5,6 +5,7 @@ class V1::RegistrationsController < Devise::SessionsController
       @user.password = registration_params[:password]
 
       if @user.save
+        current_user = @user
         render :user
       else
         puts @user.errors.messages
