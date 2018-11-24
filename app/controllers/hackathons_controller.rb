@@ -8,8 +8,7 @@ class HackathonsController < ApplicationController
     def create
 
      @hackathon = Hackathon.new
-     @hackathon.users << User.find(1)
-     binding.pry
+     @hackathon.users << User.find(4)
         if @hackathon.save 
             render json: { hackathon_id: @hackathon.id  }
         else 
