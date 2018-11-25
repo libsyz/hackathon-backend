@@ -4,7 +4,6 @@ class Hackathon < ApplicationRecord
     has_many :hackathon_phases
     
     def add_user(hacker)
-
       if users.include?(hacker)
        return StandardError
       else

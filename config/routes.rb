@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show]
     resources :hackathons, only: [:create, :show, :index]
     patch 'hackathons/add_hacker', to: 'hackathons#add_hacker'
+    patch 'hackathons/remove_hacker', to: 'hackathons#remove_hacker'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
