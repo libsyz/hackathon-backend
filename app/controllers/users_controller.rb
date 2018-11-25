@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     def index
-     @users = User.all
+     @users = User.where.not(authentication_token: request.headers['Authentication'])
      render :users_index
     end
 
