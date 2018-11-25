@@ -11,7 +11,7 @@ class HackathonsController < ApplicationController
       @hackathon.generate_phases
       @hackathon.users << @user
         if @hackathon.save 
-            render json: { hackathon_id: @hackathon.id, hackathon_users: @hackathon.users }
+            render :create
         else 
             render json: { message: "Something went wrong", error: @hackathon.errors.messages }
         end
