@@ -17,13 +17,14 @@ class HackathonsController < ApplicationController
     end
 
     def add_hacker
-      @hackathon = Hackathon.find(hackathon_params[:id])
-      @user = User.find(hackathon_params[:user_id])
-      @hackathon << @user
-      if @hackathon.save
-        render json: {message: "it's all good"}
-      else 
-        render json: {message: "something did not work"}
+
+      @hackathon = Hackathon.find(hackathon_params[:hackathon_id])
+      @user = User.find(hackathon_params[:hacker_id])
+      add_result = @hackathon.add_user(@user) if @hackathon && @user
+      if add_result == StandardError
+        render json: {error: "User was already selected"}
+      else
+        render :add_hacker
       end
     end
 
