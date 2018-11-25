@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181122232318) do
+ActiveRecord::Schema.define(version: 20181125220003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20181122232318) do
     t.integer  "hackathon_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "phase_number"
     t.index ["hackathon_id"], name: "index_hackathon_phases_on_hackathon_id", using: :btree
   end
 
