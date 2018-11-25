@@ -8,6 +8,7 @@ class HackathonsController < ApplicationController
 
     def create
       @hackathon = Hackathon.new
+      @hackathon.generate_phases
       @hackathon.users << @user
         if @hackathon.save 
             render json: { hackathon_id: @hackathon.id, hackathon_users: @hackathon.users }
@@ -62,7 +63,7 @@ class HackathonsController < ApplicationController
         params.permit!
     end
 
-    
+
     def params_to_entities
       @hackathon = Hackathon.find(hackathon_params[:hackathon_id])
       if !hackathon_params[:hacker_id].nil?
