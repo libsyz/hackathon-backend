@@ -62,6 +62,7 @@ class HackathonsController < ApplicationController
         params.permit!
     end
 
+    
     def params_to_entities
       @hackathon = Hackathon.find(hackathon_params[:hackathon_id])
       if !hackathon_params[:hacker_id].nil?
