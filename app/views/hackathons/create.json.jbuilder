@@ -8,3 +8,5 @@
         json.helperText phase.helper_text
         json.wellHackedText phase.well_hacked_text
 end
+
+
