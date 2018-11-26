@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
+gem 'pry-nav'
+gem 'pry-remote'
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
 
