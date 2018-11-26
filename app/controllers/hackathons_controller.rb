@@ -3,7 +3,7 @@ class HackathonsController < ApplicationController
     
     def index
       @hackathons = Hackathon.all
-      render :hackathons_index
+      render :index
     end
 
     def create
