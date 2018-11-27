@@ -7,6 +7,7 @@ class NotificationsController < ApplicationController
   end
 
   def create
+  binding.pry
   @notification = Notification.new
   @hackathon = Hackathon.find(params[:hackathon_id])
   @hackathon.notifications << @notification
