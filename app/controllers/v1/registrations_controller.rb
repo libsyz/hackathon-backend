@@ -1,11 +1,11 @@
 class V1::RegistrationsController < Devise::SessionsController
-    def create
-      @user = User.new
-      @user.email = registration_params[:email]
-      @user.password = registration_params[:password]
+    before_action :registration_params
 
-      if @user.save
-        current_user = @user
+    def create
+      binding.pry
+      @user = User.new(registration_params)
+      @user.avatar_pic = AvatarFactory.generate_avatar
+      if @user.save && @user.valid?
         render :user
       else
         puts @user.errors.messages
@@ -14,7 +14,7 @@ class V1::RegistrationsController < Devise::SessionsController
     end
 
     def registration_params
-        params.permit!
+        params.permit(:name,:email, :surname, :password, :position, :company)
     end
 
 end
