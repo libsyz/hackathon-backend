@@ -1,8 +1,9 @@
 class HackathonsController < ApplicationController
     before_action :authenticate_request
+
     
     def index
-      @hackathons = Hackathon.all
+      @hackathons = Hackathon.where(completed: true).all
       render :index
     end
 
@@ -15,6 +16,11 @@ class HackathonsController < ApplicationController
         else 
             render json: { message: "Something went wrong", error: @hackathon.errors.messages }
         end
+    end 
+    
+    def show
+      @hackathon = Hackathon.find(params[:id])
+      render :show
     end
 
     def add_hacker
@@ -40,22 +46,19 @@ class HackathonsController < ApplicationController
       else 
           render json: {message: "something went wrong"}
       end
+    end
 
-
-      # if @hackathon.users.includes?(@user)
-      #   @hackathon.users.delete(@user.id)
-      #   @hackathon.save 
-      # elsif !@hackathon.users.includes?(@user)
-      #     render json: {message: "removed user #{@user.name} // id: #{@user.id} from hackathon no. #{@hackathon.id}",
-      #                   status: "not found"}
-
+    def update 
+      @hackathon = Hackathon.find(params[:id])
+      @hackathon.title = params[:title]
+      @hackathon.completed = true
+      if @hackathon.save
+        render :show
+      else
+        render json: {message: "something went wrong"} 
+      end
     end
     
-
-    def show
-      @hackathon = Hackathon.find(params[:id])
-      render :show
-    end
 
     private
 
