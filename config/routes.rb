@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show]
     resources :hackathons, only: [:create, :show, :index, :update]
     patch 'hackathon_phases/edit_phase', to: 'hackathon_phases#edit'
-    patch 'hackathons/add_hacker', to: 'hackathons#add_hacker'
-    patch 'hackathons/remove_hacker', to: 'hackathons#remove_hacker'
+    put 'add_hacker', to: 'hackathons#add_hacker'
+    patch 'remove_hacker', to: 'hackathons#remove_hacker'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

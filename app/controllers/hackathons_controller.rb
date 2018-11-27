@@ -1,5 +1,6 @@
 class HackathonsController < ApplicationController
     before_action :authenticate_request
+
     
     def index
       @hackathons = Hackathon.where(completed: true).all
