@@ -75,6 +75,7 @@ def populate_phases(hackathon, info_set)
             phase.test_timeframe = info_set[:test][:timeframe]
             phase.test_protocol = info_set[:test][:protocol]
     end
+      phase.save
   end
 end
                                 
@@ -90,7 +91,7 @@ hackathon_arr << hackathon_1 << hackathon_2
 hackathon_arr.each { |hackathon| hackathon.generate_phases }
 
 populate_phases(hackathon_1, info_set_1)
-populate_phases(hackathon_1, info_set_2)
+populate_phases(hackathon_2, info_set_2)
 
 hackathon_arr.each { |hackathon| hackathon.completed = true }
 
