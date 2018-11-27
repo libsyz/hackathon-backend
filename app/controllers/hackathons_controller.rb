@@ -2,7 +2,7 @@ class HackathonsController < ApplicationController
     before_action :authenticate_request
     
     def index
-      @hackathons = Hackathon.all
+      @hackathons = Hackathon.where(completed: true).all
       render :index
     end
 
