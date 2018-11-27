@@ -1,9 +1,14 @@
 Rails.application.routes.draw do 
+  get 'notifiations/create'
+
+  get 'notifiations/destroy'
+
   scope :api, defaults: {format: :json} do
     devise_for :users, controllers: {sessions: 'v1/sessions',
                                      registrations: 'v1/registrations'}
     resources :users, only: [:index, :show]
     resources :hackathons, only: [:create, :show, :index, :update]
+    resources :notifications, only: [:create, :destroy, :index]
     patch 'hackathon_phases/edit_phase', to: 'hackathon_phases#edit'
     put 'add_hacker', to: 'hackathons#add_hacker'
     patch 'remove_hacker', to: 'hackathons#remove_hacker'
