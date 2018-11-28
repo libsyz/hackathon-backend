@@ -15,6 +15,8 @@ user_3 = User.new(name:"Alessio", surname:"Milano", position:"Head of Innovation
 user_4 = User.new(name:"Miguel", surname:"Jimenez", position:"People + Tech Consultant", email:"miguel@miguel.com", password:"123456", avatar_pic:"https://res.cloudinary.com/dhodayze1/image/upload/v1543321746/hackathon_avatar_pics/miguel.jpg")
 user_1.save
 user_2.save
+user_3.save
+user_4.save
 
 info_set_2 = { hackathon: { title: "Sam helps Bender take over",
                             completed: true
