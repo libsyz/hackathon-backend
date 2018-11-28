@@ -11,6 +11,8 @@
 User.destroy_all
 user_1 = User.new(name:"Elon", surname:"Musk", position:"CEO Tesla", email:"elon@tesla.com", password:"123456", avatar_pic:"https://res.cloudinary.com/dhodayze1/image/upload/v1543321746/hackathon_avatar_pics/elon.jpg")
 user_2 = User.new(name:"Sam", surname:"Altman", position:"CEO Y Combinator", email:"sam@y2c.com", password:"123456", avatar_pic:"https://res.cloudinary.com/dhodayze1/image/upload/v1543321746/hackathon_avatar_pics/sam.jpg")
+user_3 = User.new(name:"Alessio", surname:"Milano", position:"Head of Innovation", email:"alessio.milano@atrain.com", password:"123456", avatar_pic:"https://res.cloudinary.com/dhodayze1/image/upload/v1543321746/hackathon_avatar_pics/alessio.jpg")
+user_4 = User.new(name:"Miguel", surname:"Jimenez", position:"People + Tech Consultant", email:"miguel@miguel.com", password:"123456", avatar_pic:"https://res.cloudinary.com/dhodayze1/image/upload/v1543321746/hackathon_avatar_pics/miguel.jpg")
 user_1.save
 user_2.save
 
