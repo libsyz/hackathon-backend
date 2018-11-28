@@ -23,6 +23,7 @@ gem 'pry-nav'
 gem 'pry-remote'
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
