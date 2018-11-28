@@ -14,7 +14,7 @@ class Hackathon < ApplicationRecord
 
     def leader
       if users.size > 0 
-        users.first
+        users[0]
       end
     end
 
