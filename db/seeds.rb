@@ -8,6 +8,12 @@
 #
 #
 
+User.destroy_all
+user_1 = User.new(name:"Elon", surname:"Musk", position:"CEO Tesla", email:"elon@tesla.com", password:"123456", avatar_pic:"https://res.cloudinary.com/dhodayze1/image/upload/v1543321746/hackathon_avatar_pics/elon.jpg")
+user_2 = User.new(name:"Sam", surname:"Altman", position:"CEO Y Combinator", email:"sam@y2c.com", password:"123456", avatar_pic:"https://res.cloudinary.com/dhodayze1/image/upload/v1543321746/hackathon_avatar_pics/sam.jpg")
+user_1.save
+user_2.save
+
 info_set_2 = { hackathon: { title: "Sam helps Bender take over",
                             completed: true
                           },
