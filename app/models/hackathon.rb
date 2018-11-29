@@ -14,7 +14,7 @@ class Hackathon < ApplicationRecord
 
     def leader
       if users.size > 0 
-        leader_id = hackathon_sessions.order(:created_at).user_id
+        leader_id = self.hackathon_sessions.order(:created_at).first.user_id
         User.find(leader_id)
       end
     end
