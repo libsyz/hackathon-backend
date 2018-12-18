@@ -2,6 +2,7 @@ class NotificationsController < ApplicationController
   before_action :notification_params
 
   def index
+
     @notifications = Notification.all
     render :index
   end
@@ -13,8 +14,10 @@ class NotificationsController < ApplicationController
     if @notification.save
       render json: { message: "notification stored"}
     else
-      render json: { message: "something went wrong"}
+      
     end
+    rescue 
+    render json: { message: "something went wrong"}
   end
 
   def destroy
