@@ -22,22 +22,18 @@ describe 'Sessions API Endpoint Specs', :type => :request do
     end
 
     describe 'endpoint => api/users/sign_up' do
+
         it 'Should create a new valid user' do 
             my_params = { name: "Minueto",email:"minueto@mmm.com", surname:"Lopez", password:"123456", position:"Chief of Nothingness", company:"Self Employed" }
             post '/api/users/', params: my_params
             expect(User.all.size).to  eq(2)
         end
     
-        it 'Should reject a new user request if user is invalid' do 
+        it 'Should reject a new user creation request if params are incomplete' do 
             my_params = {email:"minueto@mmm.com", surname:"Lopez", password:"123456", position:"Chief of Nothingness", company:"Self Employed" }
             post '/api/users/', params: my_params
             expect(User.all.size).to  eq(1)
          end
-    end
-        
-
-
-
-
+        end
     end
 end

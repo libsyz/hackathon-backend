@@ -2,6 +2,7 @@ class NotificationsController < ApplicationController
   before_action :notification_params
 
   def index
+
     @notifications = Notification.all
     render :index
   end
