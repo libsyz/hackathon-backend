@@ -1,0 +1,10 @@
+
+hackathon_one:
+  id: 1
+  title: "Bruce's Final Solution"
+  completed: true
+
+hackathon_two: 
+  id: 2
+  title: "Some Other Hackathon"
+  completed: false
