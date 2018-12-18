@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'pry'
 
-RSpec.describe 'Hackathons API Specs', :type => :request do
+RSpec.describe 'Hackathons API Endpoint Specs', :type => :request do
         fixtures :users
         fixtures :hackathons
         fixtures :hackathon_phases 
