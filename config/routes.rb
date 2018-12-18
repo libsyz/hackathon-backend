@@ -1,8 +1,4 @@
 Rails.application.routes.draw do 
-  get 'notifiations/create'
-
-  get 'notifiations/destroy'
-
   scope :api, defaults: {format: :json} do
     devise_for :users, controllers: {sessions: 'v1/sessions',
                                      registrations: 'v1/registrations'}

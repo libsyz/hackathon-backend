@@ -49,6 +49,7 @@ class HackathonsController < ApplicationController
     end
 
     def update 
+
       @hackathon = Hackathon.find(params[:id])
       @hackathon.title = params[:title]
       @hackathon.completed = true

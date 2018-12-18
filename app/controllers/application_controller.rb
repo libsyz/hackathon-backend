@@ -3,6 +3,7 @@ class ApplicationController < ActionController::API
     private
 
     def authenticate_request
+        
         token = request.headers['Authentication']
 
         if token

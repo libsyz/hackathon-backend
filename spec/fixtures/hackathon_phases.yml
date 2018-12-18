@@ -1,0 +1,30 @@
+
+define_phase:
+  type: DefinePhase
+  problem_statement: How do we do this
+  completed: true
+  id: 1
+
+empathise_phase:
+  type: EmpathisePhase
+  image_url: http://pics.com/empathise
+  completed: true
+  id: 2
+
+ideate_phase:
+  type: IdeatePhase
+  image_url: http://pics.com/ideate
+  completed: true
+  id: 3
+
+prototype_phase:
+  type: PrototypePhase
+  image_url: http://pics.com/prototype
+  completed: true
+  id: 4
+
+test_phase:
+  type: TestPhase
+  test_protocol: ["Try something out", "try something else"]
+  test_timeframe: "2 weeks"
+  id: 5

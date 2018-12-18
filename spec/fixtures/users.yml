@@ -1,0 +1,7 @@
+
+miguel: 
+  id: 1
+  name: Miguel
+  email: miguel@miguel.com
+  authentication_token: 123456
+  encrypted_password: 123456
