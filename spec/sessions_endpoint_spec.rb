@@ -10,10 +10,7 @@ describe 'Sessions API Endpoint Specs', :type => :request do
     describe 'endpoint => api/users/sign_in' do
     
     it 'Should authenticate and sign in an user' do 
-        user = users(:miguel)
-        user.password = "123456"
-        user.save
-        post '/api/users/sign_in', params: {email:user.email, password: "123456" }
+        post '/api/users/sign_in', params: {email: "miguel@miguel.com", password: "123456" }
         json_response = JSON.parse(response.body)
         expect(json_response["firstName"]).to eq("Miguel")
     end

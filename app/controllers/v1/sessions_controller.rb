@@ -11,7 +11,7 @@ class V1::SessionsController < Devise::SessionsController
         end
     end
 
-    def destroy #need to check what is this respond_to shit
+    def destroy 
         if @current_user
             message = "session for user has been destroyed"
             @current_user = nil
