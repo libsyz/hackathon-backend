@@ -3,6 +3,7 @@ require 'pry'
 
 RSpec.describe 'api/hackathons', :type => :request do
     describe 'api/hackathons/index' do
+        fixtures :users
         it 'should respond to the URL' do
             get '/api/hackathons/index'
             expect(response).not_to eq(nil)
@@ -10,7 +11,6 @@ RSpec.describe 'api/hackathons', :type => :request do
 
         it 'should show hackathons if user is authenticated' do
             get '/api/hackathons/index/', {Authentication: "m6-sxEmSAxGt6Ux7FGsN"}
-            binding.pry
         end
 
         it 'should respond with an error if the user is not authenticated' do
